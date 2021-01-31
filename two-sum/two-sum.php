@@ -26,12 +26,10 @@ class Solution {
         $storage = [];
         foreach($nums as $numberIndex => $number) {
             if(!array_key_exists($number, $storage)) {
-                if(($number >= 0 && $target >= 0) || ($number >= 0 && $target < 0) || ($number < 0 && $target >= 0) || ($number < 0 && $target < 0)) {
-                    $neededFind = $target - $number;
-                } else {
-                    $neededFind = $target + $number;
-                }
+                
+                $neededFind = $target - $number;
                 $storage[$neededFind] = $numberIndex;
+
             } else {
                 return [$storage[$number], $numberIndex];
             }  
